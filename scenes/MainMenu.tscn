@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cgtklmplpjc0e"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="MenuTitleLabel" type="Label" parent="TitleVBox"]
+layout_mode = 2
+
+[node name="Underline1" type="ColorRect" parent="TitleVBox"]
+layout_mode = 2
+
+[node name="Underline2" type="ColorRect" parent="TitleVBox"]
+layout_mode = 2
+
+[node name="OptionsVBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayOption" type="HBoxContainer" parent="OptionsVBox"]
+layout_mode = 2
+
+[node name="ArrowPlay" type="Label" parent="OptionsVBox/PlayOption"]
+layout_mode = 2
+
+[node name="TextPlay" type="Label" parent="OptionsVBox/PlayOption"]
+layout_mode = 2
+
+[node name="SettingsOption" type="HBoxContainer" parent="OptionsVBox"]
+layout_mode = 2
+
+[node name="ArrowSettings" type="Label" parent="OptionsVBox/SettingsOption"]
+layout_mode = 2
+
+[node name="TextSettings" type="Label" parent="OptionsVBox/SettingsOption"]
+layout_mode = 2
+
+[node name="CreditsOption" type="HBoxContainer" parent="OptionsVBox"]
+layout_mode = 2
+
+[node name="ArrowCredits" type="Label" parent="OptionsVBox/CreditsOption"]
+layout_mode = 2
+
+[node name="TextCredits" type="Label" parent="OptionsVBox/CreditsOption"]
+layout_mode = 2
+
+[node name="ExitOption" type="HBoxContainer" parent="OptionsVBox"]
+layout_mode = 2
+
+[node name="ArrowExit" type="Label" parent="OptionsVBox/ExitOption"]
+layout_mode = 2
+
+[node name="TextExit" type="Label" parent="OptionsVBox/ExitOption"]
+layout_mode = 2
