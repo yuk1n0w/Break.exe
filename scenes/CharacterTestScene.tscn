@@ -1,10 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dovgdkh6nt6t3"]
+[gd_scene load_steps=5 format=3 uid="uid://dovgdkh6nt6t3"]
 
 [ext_resource type="PackedScene" uid="uid://dcxprtpafrupp" path="res://scenes/player.tscn" id="1_oj1q4"]
+[ext_resource type="Texture2D" uid="uid://iia1oum7ur43" path="res://assets/icon.svg" id="1_tm4cw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tm4cw"]
+texture = ExtResource("1_tm4cw")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_jjrdm"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/4 = SubResource("TileSetAtlasSource_tm4cw")
 
 [node name="CharacterTestScene" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-1, 2)
+tile_map_data = PackedByteArray(0, 0, 254, 255, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 255, 255, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_jjrdm")
 
 [node name="Player" parent="." instance=ExtResource("1_oj1q4")]
 position = Vector2(14, 6)
