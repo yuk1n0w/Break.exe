@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://dovgdkh6nt6t3"]
+[gd_scene load_steps=2 format=3 uid="uid://dovgdkh6nt6t3"]
+
+[ext_resource type="PackedScene" uid="uid://dcxprtpafrupp" path="res://scenes/player.tscn" id="1_oj1q4"]
 
 [node name="CharacterTestScene" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_oj1q4")]
+position = Vector2(14, 6)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
