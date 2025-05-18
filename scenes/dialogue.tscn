@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://btn0o32vn1bme"]
+
+[ext_resource type="Script" uid="uid://b4tnxe3xlwhtt" path="res://scripts/dialogue.gd" id="1_fyky8"]
+[ext_resource type="Texture2D" uid="uid://iia1oum7ur43" path="res://assets/icon.svg" id="2_led2e"]
+[ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="3_vogiq"]
+[ext_resource type="AudioStream" uid="uid://n4n0xfvjsj4r" path="res://assets/square_440.wav" id="4_x1cjp"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyky8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 380.0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_led2e")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(530, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vogiq")
+theme_override_font_sizes/font_size = 32
+text = "Hello!"
+autowrap_mode = 2
+
+[node name="TextSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x1cjp")
+volume_db = -5.0
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcxprtpafrupp"]
+[gd_scene load_steps=6 format=3 uid="uid://dcxprtpafrupp"]
 
 [ext_resource type="Texture2D" uid="uid://iia1oum7ur43" path="res://assets/icon.svg" id="1_3vyb7"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://b7g8roc2gjhc4" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://btn0o32vn1bme" path="res://scenes/dialogue.tscn" id="3_qhqgy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -25,3 +26,10 @@ sprite_frames = SubResource("SpriteFrames_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="Dialogue" parent="." instance=ExtResource("3_qhqgy")]
+visible = false
+offset_left = -320.0
+offset_top = -240.0
+offset_right = -320.0
+offset_bottom = -240.0
