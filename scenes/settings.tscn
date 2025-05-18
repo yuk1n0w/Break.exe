@@ -92,41 +92,22 @@ layout_mode = 2
 text = "[OFF]"
 label_settings = ExtResource("3_6wm04")
 
-[node name="VolumeHBox" type="HBoxContainer" parent="OptionsVBox"]
+[node name="MasterVolumeHBox" type="HBoxContainer" parent="OptionsVBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="VolumeOptionTitle" type="Label" parent="OptionsVBox/VolumeHBox"]
+[node name="MasterVolumeOptionTitle" type="Label" parent="OptionsVBox/MasterVolumeHBox"]
 layout_mode = 2
-text = "Volume"
+text = "Master Volume"
 label_settings = ExtResource("3_6wm04")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Margin" type="Control" parent="OptionsVBox/VolumeHBox"]
+[node name="Margin" type="Control" parent="OptionsVBox/MasterVolumeHBox"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="VolumeOptionValue" type="Label" parent="OptionsVBox/VolumeHBox"]
-layout_mode = 2
-text = "[100%]"
-label_settings = ExtResource("3_6wm04")
-
-[node name="BrightnessHBox" type="HBoxContainer" parent="OptionsVBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="BrightnessOptionTitle" type="Label" parent="OptionsVBox/BrightnessHBox"]
-layout_mode = 2
-text = "Brightness"
-label_settings = ExtResource("3_6wm04")
-horizontal_alignment = 1
-
-[node name="Margin" type="Control" parent="OptionsVBox/BrightnessHBox"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="BrightnessOptionValue" type="Label" parent="OptionsVBox/BrightnessHBox"]
+[node name="MasterVolumeOptionValue" type="Label" parent="OptionsVBox/MasterVolumeHBox"]
 layout_mode = 2
 text = "[100%]"
 label_settings = ExtResource("3_6wm04")
