@@ -1,7 +1,5 @@
 extends Control
 
-const FancyFade = preload("res://addons/transitions/FancyFade.gd")
-
 @onready var play_option: HBoxContainer = $OptionsVBox/PlayOption
 @onready var settings_option: HBoxContainer = $OptionsVBox/SettingsOption
 @onready var credits_option: HBoxContainer = $OptionsVBox/CreditsOption
@@ -65,7 +63,7 @@ func _on_option_selected():
 		0:
 			print("Play selected")
 		1: 
-			FancyFade.new().pixelated_noise(preload("res://scenes/settings.tscn").instantiate(), 0.3)
+			get_tree().change_scene_to_file("res://scenes/settings.tscn")
 		2:
 			print("Credits selected")
 		3:
