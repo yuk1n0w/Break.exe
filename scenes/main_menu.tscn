@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgtklmplpjc0e"]
+[gd_scene load_steps=6 format=3 uid="uid://cgtklmplpjc0e"]
 
 [ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://assets/main_menu.gdshader" id="2_wu84c"]
@@ -11,31 +11,6 @@ shader_parameter/scanline_intensity = 0.05
 shader_parameter/scanline_frequency = 480.0
 shader_parameter/noise_intensity = 0.02
 shader_parameter/time_scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_ukcvp"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/39/0/ascent = 0.0
-cache/0/39/0/descent = 0.0
-cache/0/39/0/underline_position = 0.0
-cache/0/39/0/underline_thickness = 0.0
-cache/0/39/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
 
 [sub_resource type="Environment" id="Environment_2wh52"]
 glow_enabled = true
@@ -90,27 +65,28 @@ custom_minimum_size = Vector2(60, 3)
 layout_mode = 2
 color = Color(0.784314, 0.0627451, 0.180392, 1)
 
+[node name="ArrowLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 23.0
+text = "▶"
+vertical_alignment = 1
+
 [node name="OptionsVBox" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = -1
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -52.0
-offset_right = 40.0
-offset_bottom = 52.0
+offset_left = 37.0
+offset_top = -75.0
+offset_right = 124.0
+offset_bottom = 76.0
 grow_vertical = 2
 theme_override_constants/separation = 5
 
 [node name="PlayOption" type="HBoxContainer" parent="OptionsVBox"]
 layout_mode = 2
 theme_override_constants/separation = 4
-
-[node name="ArrowPlay" type="Label" parent="OptionsVBox/PlayOption"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_ukcvp")
-theme_override_font_sizes/font_size = 20
-text = "   "
-vertical_alignment = 1
 
 [node name="TextPlay" type="Label" parent="OptionsVBox/PlayOption"]
 layout_mode = 2
@@ -123,13 +99,6 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="ArrowSettings" type="Label" parent="OptionsVBox/SettingsOption"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_ukcvp")
-theme_override_font_sizes/font_size = 20
-text = "   "
-vertical_alignment = 1
-
 [node name="TextSettings" type="Label" parent="OptionsVBox/SettingsOption"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8ln24")
@@ -141,13 +110,6 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="ArrowCredits" type="Label" parent="OptionsVBox/CreditsOption"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_ukcvp")
-theme_override_font_sizes/font_size = 20
-text = "   "
-vertical_alignment = 1
-
 [node name="TextCredits" type="Label" parent="OptionsVBox/CreditsOption"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8ln24")
@@ -158,13 +120,6 @@ vertical_alignment = 1
 [node name="ExitOption" type="HBoxContainer" parent="OptionsVBox"]
 layout_mode = 2
 theme_override_constants/separation = 4
-
-[node name="ArrowExit" type="Label" parent="OptionsVBox/ExitOption"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_ukcvp")
-theme_override_font_sizes/font_size = 20
-text = "   "
-vertical_alignment = 1
 
 [node name="TextExit" type="Label" parent="OptionsVBox/ExitOption"]
 layout_mode = 2
