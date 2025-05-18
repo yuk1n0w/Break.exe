@@ -18,11 +18,11 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 
-func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null):
+func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null, pitch=null, pitch_randomization=null):
 	if not in_dialogue:
 		in_dialogue = true
 		dialogue.visible = true
-		await dialogue.do_dialogue(text, picture, sfx, speed, sfx_vol)
+		await dialogue.do_dialogue(text, picture, sfx, speed, sfx_vol, pitch, pitch_randomization)
 		dialogue.visible = false
 		in_dialogue = false
 
