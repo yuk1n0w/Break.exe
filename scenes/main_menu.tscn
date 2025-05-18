@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgtklmplpjc0e"]
 
-[ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scripts/MainMenu.gd" id="1_0ykhv"]
-[ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="1_yqorp"]
-[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://assets/MainMenu.gdshader" id="2_2wh52"]
+[ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://assets/main_menu.gdshader" id="2_wu84c"]
+[ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="3_8ln24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ow34m"]
-shader = ExtResource("2_2wh52")
+shader = ExtResource("2_wu84c")
 shader_parameter/base_color = Color(0.125, 0.188, 0.125, 1)
 shader_parameter/scanline_intensity = 0.05
 shader_parameter/scanline_frequency = 480.0
@@ -50,7 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0ykhv")
+script = ExtResource("1_bqqt6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ow34m")
@@ -75,7 +75,7 @@ theme_override_constants/separation = 2
 
 [node name="MenuTitleLabel" type="Label" parent="TitleVBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 50
 text = "Break.exe"
 horizontal_alignment = 1
@@ -114,7 +114,7 @@ vertical_alignment = 1
 
 [node name="TextPlay" type="Label" parent="OptionsVBox/PlayOption"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 30
 text = "Play"
 vertical_alignment = 1
@@ -132,7 +132,7 @@ vertical_alignment = 1
 
 [node name="TextSettings" type="Label" parent="OptionsVBox/SettingsOption"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 30
 text = "Settings"
 vertical_alignment = 1
@@ -150,7 +150,7 @@ vertical_alignment = 1
 
 [node name="TextCredits" type="Label" parent="OptionsVBox/CreditsOption"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 vertical_alignment = 1
@@ -168,7 +168,7 @@ vertical_alignment = 1
 
 [node name="TextExit" type="Label" parent="OptionsVBox/ExitOption"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_yqorp")
+theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 vertical_alignment = 1
