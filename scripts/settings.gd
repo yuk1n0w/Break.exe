@@ -18,7 +18,8 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("ui_up"):
 		current_index = (current_index - 1 + option_boxes.size()) % option_boxes.size()
 		update_arrow_pos()
-
+	elif event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 func update_arrow_pos(immediate=false):
 	var target_rect = option_boxes[current_index].get_global_rect()
 	var target_y = target_rect.position.y
