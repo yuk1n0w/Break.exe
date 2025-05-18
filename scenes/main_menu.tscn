@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgtklmplpjc0e"]
+[gd_scene load_steps=6 format=3 uid="uid://bh7dqxa4ttvy3"]
 
-[ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scripts/main_menu.gd" id="1_bqqt6"]
-[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://assets/main_menu.gdshader" id="2_wu84c"]
+[ext_resource type="Script" uid="uid://c18li2dhpfog2" path="res://scripts/MainMenu.gd" id="1_bqqt6"]
+[ext_resource type="Shader" uid="uid://ce5he4kxdu6i8" path="res://assets/MainMenu.gdshader" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="3_8ln24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ow34m"]
@@ -66,8 +66,10 @@ layout_mode = 2
 color = Color(0.784314, 0.0627451, 0.180392, 1)
 
 [node name="ArrowLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 87.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 11.0
+offset_right = 98.0
 offset_bottom = 23.0
 text = "▶"
 vertical_alignment = 1
