@@ -12,7 +12,7 @@ var current_selection_index: int = 0
 
 # Define what your arrow and empty space will look like
 # For the video's style, a triangle ">" or "▶" might be good if your font supports it
-const ARROW_TEXT = "> " # Or "▶ " if your font has a good triangle
+const ARROW_TEXT = "▶ " # Or "▶ " if your font has a good triangle
 const EMPTY_ARROW_TEXT = "  " # Ensure this has the same visual width as ARROW_TEXT
 
 func _ready():

@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgtklmplpjc0e"]
+[gd_scene load_steps=7 format=3 uid="uid://cgtklmplpjc0e"]
 
 [ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scenes/MainMenu.gd" id="1_0ykhv"]
 [ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="1_yqorp"]
+[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://scenes/MainMenu.gdshader" id="2_2wh52"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ow34m"]
+shader = ExtResource("2_2wh52")
+shader_parameter/base_color = Color(0.125, 0.188, 0.125, 1)
+shader_parameter/scanline_intensity = 0.05
+shader_parameter/scanline_frequency = 480.0
+shader_parameter/noise_intensity = 0.02
+shader_parameter/time_scale = 1.0
 
 [sub_resource type="FontFile" id="FontFile_ukcvp"]
 cache/0/16/0/ascent = 0.0
@@ -25,6 +34,12 @@ cache/0/20/0/underline_position = 0.0
 cache/0/20/0/underline_thickness = 0.0
 cache/0/20/0/scale = 1.0
 
+[sub_resource type="Environment" id="Environment_2wh52"]
+glow_enabled = true
+glow_intensity = 0.68
+glow_bloom = 0.1
+glow_hdr_threshold = 0.9
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -33,6 +48,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0ykhv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ow34m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12549, 0.188235, 0.12549, 1)
 
 [node name="TitleVBox" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -144,3 +169,6 @@ theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 vertical_alignment = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2wh52")
