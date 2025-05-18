@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bsr0p3trco6ix"]
+
+[ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="1_pxasc"]
+
+[resource]
+font = ExtResource("1_pxasc")
+font_size = 40
