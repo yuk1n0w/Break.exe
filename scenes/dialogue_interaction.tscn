@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2shsjn1mfcl"]
 
-[ext_resource type="Script" uid="uid://crx6kssfx46fu" path="res://dialogue_interaction.gd" id="1_col8u"]
+[ext_resource type="Script" uid="uid://crx6kssfx46fu" path="res://scripts/dialogue_interaction.gd" id="1_col8u"]
 
 [node name="DialogueInteraction" type="Area2D"]
 script = ExtResource("1_col8u")
