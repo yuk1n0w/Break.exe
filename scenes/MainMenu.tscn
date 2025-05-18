@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgtklmplpjc0e"]
 
-[ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scenes/MainMenu.gd" id="1_0ykhv"]
+[ext_resource type="Script" uid="uid://c8juq47xrite2" path="res://scripts/MainMenu.gd" id="1_0ykhv"]
 [ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="1_yqorp"]
-[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://scenes/MainMenu.gdshader" id="2_2wh52"]
+[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://assets/MainMenu.gdshader" id="2_2wh52"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ow34m"]
 shader = ExtResource("2_2wh52")
@@ -13,6 +13,9 @@ shader_parameter/noise_intensity = 0.02
 shader_parameter/time_scale = 1.0
 
 [sub_resource type="FontFile" id="FontFile_ukcvp"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -74,7 +77,7 @@ theme_override_constants/separation = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_yqorp")
 theme_override_font_sizes/font_size = 50
-text = "Menu"
+text = "Break.exe"
 horizontal_alignment = 1
 
 [node name="Underline1" type="ColorRect" parent="TitleVBox"]
