@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dovgdkh6nt6t3"]
+[gd_scene load_steps=8 format=3 uid="uid://dovgdkh6nt6t3"]
 
+[ext_resource type="Script" uid="uid://dn4jikqhh153q" path="res://scripts/cts.gd" id="1_chr53"]
 [ext_resource type="PackedScene" uid="uid://dcxprtpafrupp" path="res://scenes/player.tscn" id="1_oj1q4"]
 [ext_resource type="Texture2D" uid="uid://iia1oum7ur43" path="res://assets/icon.svg" id="1_tm4cw"]
 [ext_resource type="PackedScene" uid="uid://d2shsjn1mfcl" path="res://scenes/dialogue_interaction.tscn" id="3_0f2bp"]
@@ -19,6 +20,7 @@ sources/4 = SubResource("TileSetAtlasSource_tm4cw")
 size = Vector2(198, 192)
 
 [node name="CharacterTestScene" type="Node2D"]
+script = ExtResource("1_chr53")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 2)

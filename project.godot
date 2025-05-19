@@ -17,8 +17,8 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-MusicPlayer="*res://scenes/bgmusic.tscn"
 Settings="*res://scripts/settings.gd"
+Bgmusic="*res://scenes/bgmusic.tscn"
 
 [display]
 
