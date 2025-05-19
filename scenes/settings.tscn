@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dybvkdqnj1fqa"]
+[gd_scene load_steps=10 format=3 uid="uid://k5se46psddxg"]
 
 [ext_resource type="Script" uid="uid://d0benfx64gf4g" path="res://scripts/settings_menu.gd" id="1_f4mfi"]
-[ext_resource type="Shader" uid="uid://dhu63ivwhis8d" path="res://assets/main_menu.gdshader" id="1_r6d6q"]
+[ext_resource type="Shader" uid="uid://ce5he4kxdu6i8" path="res://assets/MainMenu.gdshader" id="1_r6d6q"]
 [ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="2_6wm04"]
-[ext_resource type="LabelSettings" uid="uid://bsr0p3trco6ix" path="res://scenes/settings_item_label_settings.tres" id="3_6wm04"]
+[ext_resource type="LabelSettings" uid="uid://dqqfmkxgm3jbs" path="res://scenes/settings_item_label_settings.tres" id="3_6wm04"]
 
 [sub_resource type="Environment" id="Environment_f4mfi"]
 
@@ -153,7 +153,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 102.0
 offset_top = 103.0
-offset_right = 127.0
+offset_right = 130.0
 offset_bottom = 148.0
 rotation = 0.000127715
 text = "▶"
