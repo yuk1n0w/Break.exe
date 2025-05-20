@@ -3,6 +3,7 @@ extends Control
 @onready var label: Label = $Panel/HBoxContainer/Label
 @onready var texture_rect: TextureRect = $Panel/HBoxContainer/TextureRect
 @onready var timer: Timer = $Timer
+@onready var sfx_confirm: AudioStreamPlayer = $Confirm
 
 func wait_for_action(action_name: String) -> void:
 	while true:
