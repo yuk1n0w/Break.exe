@@ -17,6 +17,10 @@ var current_tween: Tween
 @onready var fullscreen_option_value: Label = $OptionsVBox/FullscreenHBox/FullscreenOptionValue
 @onready var master_vol_option_value: Label = $OptionsVBox/MasterVolumeHBox/MasterVolumeOptionValue
 
+@onready var sfx_move: AudioStreamPlayer = $Move
+@onready var sfx_confirm: AudioStreamPlayer = $Confirm
+
+
 const ARROW_ANIMATION_DURATION = 0.15
 
 func _ready():
@@ -50,21 +54,26 @@ func _ready():
 func _unhandled_input(event: InputEvent):
 	var selection_changed = false
 	if event.is_action_pressed("ui_down"):
+		sfx_move.play()
 		current_index = (current_index + 1) % option_boxes.size()
 		selection_changed = true
 		accept_event()
 	elif event.is_action_pressed("ui_up"):
+		sfx_move.play()
 		current_index = (current_index - 1 + option_boxes.size()) % option_boxes.size()
 		selection_changed = true
 		accept_event()
 	elif event.is_action_pressed("ui_cancel"):
+		sfx_confirm.play()
 		if Settings: Settings.save_settings()
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		accept_event()
 	elif event.is_action_pressed("ui_right"):
+		sfx_move.play()
 		handle_value_change(1)
 		accept_event()
 	elif event.is_action_pressed("ui_left"):
+		sfx_move.play()
 		handle_value_change(-1)
 		accept_event()
 

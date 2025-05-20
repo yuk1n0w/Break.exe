@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck7twy6ienwqo"]
 
-[ext_resource type="AudioStream" uid="uid://b1wrovn5n7aro" path="res://assets/Test.mp3" id="1_um84k"]
+[ext_resource type="AudioStream" uid="uid://d3ttwbpfcw4q8" path="res://assets/Menu.ogg" id="1_um84k"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_um84k")
 autoplay = true
+bus = &"ReverbMusic"
+parameters/looping = true

@@ -8,6 +8,11 @@ extends Control
 
 @onready var options_vbox: VBoxContainer = $OptionsVBox
 
+# sfx
+@onready var sfx_confirm: AudioStreamPlayer = $Confirm
+@onready var sfx_move: AudioStreamPlayer = $Move
+
+
 var menu_option_nodes: Array[HBoxContainer]
 var current_selection_index: int = 0
 var current_tween: Tween
@@ -57,12 +62,15 @@ func _input(event: InputEvent):
 	var previous_selection = current_selection_index
 
 	if event.is_action_pressed("ui_down"):
+		sfx_move.play()
 		current_selection_index = (current_selection_index + 1) % menu_option_nodes.size()
 		accept_event()
 	elif event.is_action_pressed("ui_up"):
+		sfx_move.play()
 		current_selection_index = (current_selection_index - 1 + menu_option_nodes.size()) % menu_option_nodes.size()
 		accept_event()
 	elif event.is_action_pressed("ui_accept"):
+		sfx_confirm.play()
 		_on_option_selected()
 		accept_event()
 
