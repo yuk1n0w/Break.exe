@@ -79,7 +79,7 @@ offset_bottom = 368.0
 layout_mode = 2
 alignment = 1
 
-[node name="FullscreenOptionTitle" type="Label" parent="OptionsVBox/FullscreenHBox"]
+[node name="OptionTitle" type="Label" parent="OptionsVBox/FullscreenHBox"]
 layout_mode = 2
 text = "Fullscreen"
 label_settings = ExtResource("3_6wm04")
@@ -89,7 +89,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="FullscreenOptionValue" type="Label" parent="OptionsVBox/FullscreenHBox"]
+[node name="OptionValue" type="Label" parent="OptionsVBox/FullscreenHBox"]
 layout_mode = 2
 text = "[OFF]"
 label_settings = ExtResource("3_6wm04")
@@ -98,7 +98,7 @@ label_settings = ExtResource("3_6wm04")
 layout_mode = 2
 alignment = 1
 
-[node name="MasterVolumeOptionTitle" type="Label" parent="OptionsVBox/MasterVolumeHBox"]
+[node name="OptionTitle" type="Label" parent="OptionsVBox/MasterVolumeHBox"]
 layout_mode = 2
 text = "Master Volume"
 label_settings = ExtResource("3_6wm04")
@@ -109,7 +109,47 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="MasterVolumeOptionValue" type="Label" parent="OptionsVBox/MasterVolumeHBox"]
+[node name="OptionValue" type="Label" parent="OptionsVBox/MasterVolumeHBox"]
+layout_mode = 2
+text = "[100%]"
+label_settings = ExtResource("3_6wm04")
+
+[node name="BgmVolumeHBox" type="HBoxContainer" parent="OptionsVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="OptionTitle" type="Label" parent="OptionsVBox/BgmVolumeHBox"]
+layout_mode = 2
+text = "BGM Volume"
+label_settings = ExtResource("3_6wm04")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Margin" type="Control" parent="OptionsVBox/BgmVolumeHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="OptionValue" type="Label" parent="OptionsVBox/BgmVolumeHBox"]
+layout_mode = 2
+text = "[100%]"
+label_settings = ExtResource("3_6wm04")
+
+[node name="SfxVolumeHBox" type="HBoxContainer" parent="OptionsVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="OptionTitle" type="Label" parent="OptionsVBox/SfxVolumeHBox"]
+layout_mode = 2
+text = "SFX Volume"
+label_settings = ExtResource("3_6wm04")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Margin" type="Control" parent="OptionsVBox/SfxVolumeHBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="OptionValue" type="Label" parent="OptionsVBox/SfxVolumeHBox"]
 layout_mode = 2
 text = "[100%]"
 label_settings = ExtResource("3_6wm04")
@@ -121,7 +161,7 @@ offset_right = 640.0
 offset_bottom = 412.0
 alignment = 1
 
-[node name="MainMenuOptionTitle" type="Label" parent="MainMenuHBox"]
+[node name="OptionTitle" type="Label" parent="MainMenuHBox"]
 layout_mode = 2
 text = "[ESC] Main Menu"
 label_settings = SubResource("LabelSettings_6wm04")

@@ -1,53 +1,55 @@
 extends Control
 
-# Explicitly get HBoxContainers for options
-@onready var fullscreen_hbox: HBoxContainer = $OptionsVBox/FullscreenHBox
-@onready var master_volume_hbox: HBoxContainer = $OptionsVBox/MasterVolumeHBox
+# ------------------------------------------------------------------------------------------
 
-var option_boxes: Array[HBoxContainer] # Will store the HBoxContainers
+# CONSTANTS
+
+const ARROW_ANIMATION_DURATION = 0.15
+
+# CONSTANTS
+
+# ------------------------------------------------------------------------------------------
+
+var option_boxes: Array
 var current_index := 0
-
-# Assuming Arrow is a Label node, direct child of this script's node,
-# AND its Layout Mode is set to "Position" in the Inspector.
-@onready var arrow: Label = $Arrow
-@onready var options_vbox: VBoxContainer = $OptionsVBox # Used if Arrow X is relative to it
-
 var current_tween: Tween
 
-@onready var fullscreen_option_value: Label = $OptionsVBox/FullscreenHBox/FullscreenOptionValue
-@onready var master_vol_option_value: Label = $OptionsVBox/MasterVolumeHBox/MasterVolumeOptionValue
+@onready var arrow: Label = $Arrow
+@onready var options_vbox: VBoxContainer = $OptionsVBox
+
+
+# Option values
+
+@onready var fullscreen_option_value: Label = $OptionsVBox/FullscreenHBox/OptionValue
+@onready var master_vol_option_value: Label = $OptionsVBox/MasterVolumeHBox/OptionValue
+@onready var bgm_vol_option_value: Label = $OptionsVBox/BgmVolumeHBox/OptionValue
+@onready var sfx_vol_option_value: Label = $OptionsVBox/SfxVolumeHBox/OptionValue
+
+# Option values
+
+# ------------------------------------------------------------------------------------------
+
+# Sound effects
 
 @onready var sfx_move: AudioStreamPlayer = $Move
 @onready var sfx_confirm: AudioStreamPlayer = $Confirm
 
+# Sound effects
 
-const ARROW_ANIMATION_DURATION = 0.15
+# ------------------------------------------------------------------------------------------
 
 func _ready():
-	self.focus_mode = Control.FOCUS_ALL # Allow this control to get focus
+	self.focus_mode = Control.FOCUS_ALL
 
-	option_boxes = [
-		fullscreen_hbox,
-		master_volume_hbox
-	]
-
-	if not is_instance_valid(arrow):
-		printerr("Settings Arrow node not found or invalid! Path: $Arrow. Ensure it's a child of the node with this script.")
-		return # Stop if arrow is not found
-
-	# IMPORTANT: For this script to work, you MUST ensure that in the Godot Editor,
-	# the 'Arrow' node (referenced by $Arrow) has its 'Layout -> Layout Mode' 
-	# property set to 'Position'. We are not checking this in script.
-
-	await get_tree().process_frame
-	update_arrow_pos(true) # instant = true
+	option_boxes = options_vbox.get_children()
 	
-	if Settings:
-		fullscreen_option_value.text = "[ON]" if Settings.fullscreen else "[OFF]"
-		master_vol_option_value.text = "[" + str(Settings.master_vol) + "%]"
-		Settings.apply_settings()
-	else:
-		printerr("Settings autoload not found!")
+	await get_tree().process_frame
+	update_arrow_pos(true)
+
+	fullscreen_option_value.text = "[ON]" if Settings.fullscreen else "[OFF]"
+	master_vol_option_value.text = "[" + str(Settings.master_vol) + "%]"
+	bgm_vol_option_value.text = "[" + str(Settings.bgm_vol) + "%]"
+	sfx_vol_option_value.text = "[" + str(Settings.sfx_vol) + "%]"
 
 	grab_focus()
 
@@ -65,7 +67,6 @@ func _unhandled_input(event: InputEvent):
 		accept_event()
 	elif event.is_action_pressed("ui_cancel"):
 		sfx_confirm.play()
-		if Settings: Settings.save_settings()
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		accept_event()
 	elif event.is_action_pressed("ui_right"):
@@ -78,14 +79,9 @@ func _unhandled_input(event: InputEvent):
 		accept_event()
 
 	if selection_changed:
-		if is_instance_valid(arrow): # Good to keep this check before animating
-			update_arrow_pos()
-		else:
-			printerr("Settings Arrow became invalid, cannot update position.")
+		update_arrow_pos()
 
 func handle_value_change(direction: int):
-	if not Settings: return
-
 	if current_index == 0: # Fullscreen
 		Settings.fullscreen = not Settings.fullscreen
 		fullscreen_option_value.text = "[ON]" if Settings.fullscreen else "[OFF]"
@@ -93,24 +89,23 @@ func handle_value_change(direction: int):
 		var change_amount = 5 * direction
 		Settings.master_vol = clamp(Settings.master_vol + change_amount, 0, 100)
 		master_vol_option_value.text = "[" + str(Settings.master_vol) + "%]"
+	elif current_index == 2: # Bgm Volume
+		var change_amount = 5 * direction
+		Settings.bgm_vol = clamp(Settings.bgm_vol + change_amount, 0, 100)
+		bgm_vol_option_value.text = "[" + str(Settings.bgm_vol) + "%]"
+	elif current_index == 3: # Sfx Volume
+		var change_amount = 5 * direction
+		Settings.sfx_vol = clamp(Settings.sfx_vol + change_amount, 0, 100)
+		sfx_vol_option_value.text = "[" + str(Settings.sfx_vol) + "%]"
 	
 	Settings.save_settings()
 	Settings.apply_settings()
 
 func update_arrow_pos(immediate: bool = false):
-	if option_boxes.is_empty() or not is_instance_valid(arrow):
-		return
-	if current_index >= option_boxes.size() or current_index < 0:
-		printerr("current_index out of bounds for option_boxes in settings.")
-		return
-
 	var target_hbox = option_boxes[current_index]
-	if not is_instance_valid(target_hbox):
-		printerr("Target HBox for arrow in settings is invalid.")
-		return
 
 	var target_y_centered = target_hbox.global_position.y + (target_hbox.size.y / 2.0) - (arrow.size.y / 2.0)
-	var arrow_x_global = arrow.global_position.x # Use X set in editor
+	var arrow_x_global = arrow.global_position.x
 
 	if is_instance_valid(current_tween) and current_tween.is_running():
 		current_tween.kill()
