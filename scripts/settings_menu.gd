@@ -31,8 +31,8 @@ var current_tween: Tween
 
 # Sound effects
 
-@onready var sfx_move: AudioStreamPlayer = $Move
-@onready var sfx_confirm: AudioStreamPlayer = $Confirm
+@onready var sfx_move: AudioStreamPlayer = Global.get_node("Move")
+@onready var sfx_confirm: AudioStreamPlayer = Global.get_node("Confirm")
 
 # Sound effects
 

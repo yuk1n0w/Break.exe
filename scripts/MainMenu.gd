@@ -9,8 +9,8 @@ extends Control
 @onready var options_vbox: VBoxContainer = $OptionsVBox
 
 # sfx
-@onready var sfx_confirm: AudioStreamPlayer = $Confirm
-@onready var sfx_move: AudioStreamPlayer = $Move
+@onready var sfx_confirm: AudioStreamPlayer = Global.get_node("Confirm")
+@onready var sfx_move: AudioStreamPlayer = Global.get_node("Move")
 
 
 var menu_option_nodes: Array[HBoxContainer]

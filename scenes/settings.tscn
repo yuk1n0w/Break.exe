@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://k5se46psddxg"]
+[gd_scene load_steps=10 format=3 uid="uid://k5se46psddxg"]
 
 [ext_resource type="Script" uid="uid://d0benfx64gf4g" path="res://scripts/settings_menu.gd" id="1_f4mfi"]
 [ext_resource type="Shader" uid="uid://ce5he4kxdu6i8" path="res://assets/MainMenu.gdshader" id="1_r6d6q"]
 [ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="2_6wm04"]
 [ext_resource type="LabelSettings" uid="uid://dqqfmkxgm3jbs" path="res://scenes/settings_item_label_settings.tres" id="3_6wm04"]
-[ext_resource type="AudioStream" uid="uid://gl1iilfap75g" path="res://assets/confirm.ogg" id="5_gis3k"]
-[ext_resource type="AudioStream" uid="uid://c40qrec50o5fs" path="res://assets/move.ogg" id="6_83j8s"]
 
 [sub_resource type="Environment" id="Environment_f4mfi"]
 
@@ -200,11 +198,3 @@ offset_bottom = 148.0
 rotation = 0.000127715
 text = "▶"
 label_settings = SubResource("LabelSettings_es4n0")
-
-[node name="Confirm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_gis3k")
-bus = &"ReverbSFX"
-
-[node name="Move" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_83j8s")
-bus = &"ReverbSFX"

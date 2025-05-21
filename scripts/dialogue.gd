@@ -10,17 +10,19 @@ func wait_for_action(action_name: String) -> void:
 		if Input.is_action_just_pressed(action_name):
 			break
 
-func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null, pitch=null, pitch_randomization=null):
+func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null, sfx_bus=null, pitch=null, pitch_randomization=null):
 	# Optional parameters - must not be null
 	if picture == null: picture = load("res://assets/icon.svg")
 	if sfx == null: sfx = load("res://assets/square_440.wav")
 	if speed == null: speed = 0.05
 	if sfx_vol == null: sfx_vol = -5.0
+	if sfx_bus == null: sfx_bus = "SFX"
 	if pitch == null: pitch = 1.0
 	if pitch_randomization == null: pitch_randomization = 0.1
 	
 	text_sound.volume_db = sfx_vol
 	text_sound.stream = sfx
+	text_sound.bus = sfx_bus
 	texture_rect.texture = picture
 	timer.wait_time = speed
 	label.text = ""
