@@ -17,6 +17,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = y_direction * SPEED * speed_multiplier
 
 		move_and_slide()
+		
+func _ready():
+	Global.player_ready(self)
 
 func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null, sfx_bus=null, pitch=null, pitch_randomization=null):
 	if not in_dialogue:

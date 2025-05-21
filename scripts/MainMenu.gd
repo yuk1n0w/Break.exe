@@ -11,6 +11,7 @@ extends Control
 # sfx
 @onready var sfx_confirm: AudioStreamPlayer = Global.get_node("Confirm")
 @onready var sfx_move: AudioStreamPlayer = Global.get_node("Move")
+@onready var music: AudioStreamPlayer = Global.get_node("Menu")
 
 
 var menu_option_nodes: Array[HBoxContainer]
@@ -106,8 +107,8 @@ func _on_option_selected():
 	match current_selection_index:
 		0: # Play
 			print("Play selected")
-			Bgmusic.stream_paused = true
-			get_tree().change_scene_to_file("res://scenes/character_test_scene.tscn")
+			music.stream_paused = true
+			get_tree().change_scene_to_file("res://scenes/map/bedroom.tscn")
 		1: # Settings
 			print("Settings selected")
 			get_tree().change_scene_to_file("res://scenes/settings.tscn")

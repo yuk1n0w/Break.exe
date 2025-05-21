@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0vubwel0081o"]
+[gd_scene load_steps=5 format=3 uid="uid://c0vubwel0081o"]
 
+[ext_resource type="Script" uid="uid://cb7u0ssu0bb2g" path="res://scripts/global.gd" id="1_m3l3d"]
 [ext_resource type="AudioStream" uid="uid://d3ttwbpfcw4q8" path="res://assets/Menu.ogg" id="1_opebo"]
 [ext_resource type="AudioStream" uid="uid://c40qrec50o5fs" path="res://assets/move.ogg" id="2_m3l3d"]
 [ext_resource type="AudioStream" uid="uid://gl1iilfap75g" path="res://assets/confirm.ogg" id="3_nelfd"]
 
 [node name="Global" type="Node"]
+script = ExtResource("1_m3l3d")
 
 [node name="Menu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_opebo")
+autoplay = true
 bus = &"ReverbMusic"
 
 [node name="Move" type="AudioStreamPlayer" parent="."]
