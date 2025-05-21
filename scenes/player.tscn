@@ -16,20 +16,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(128, 130)
+size = Vector2(18, 18)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qhqgy")
 
-[node name="Dialogue" parent="." instance=ExtResource("3_qhqgy")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialogue" parent="CanvasLayer" instance=ExtResource("3_qhqgy")]
 visible = false
-offset_left = -320.0
-offset_top = -240.0
-offset_right = -320.0
-offset_bottom = -240.0

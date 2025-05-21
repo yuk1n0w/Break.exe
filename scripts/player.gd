@@ -1,7 +1,7 @@
 extends CharacterBody2D
-@onready var dialogue: Control = $Dialogue
+@onready var dialogue: Control = $CanvasLayer/Dialogue
 
-const SPEED = 300.0
+const SPEED = 75.0
 var speed_multiplier = 1.0
 @export var in_dialogue = false
 
