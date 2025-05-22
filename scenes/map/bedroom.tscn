@@ -1247,12 +1247,3 @@ limit_left = -160
 limit_top = -160
 limit_right = 160
 limit_bottom = 160
-
-[node name="exit" parent="." instance=ExtResource("6_8wetk")]
-position = Vector2(0, 90)
-next_scene = ExtResource("7_dchtv")
-entry_pos = "exit"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
-position = Vector2(0, 10)
-shape = SubResource("WorldBoundaryShape2D_ulbkd")
