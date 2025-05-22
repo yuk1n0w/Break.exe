@@ -19,7 +19,6 @@ config/icon="res://assets/icon.svg"
 
 Settings="*res://scripts/settings.gd"
 Global="*res://scenes/global.tscn"
-MenuKeybind="*res://scripts/menu_keybind.gd"
 
 [display]
 

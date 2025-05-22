@@ -14,7 +14,7 @@ func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null, sfx_bus
 	# Optional parameters - must not be null
 	if picture == null: picture = load("res://assets/icon.svg")
 	if sfx == null: sfx = load("res://assets/square_440.wav")
-	if speed == null: speed = 0.05
+	if speed == null: speed = 0.04
 	if sfx_vol == null: sfx_vol = -5.0
 	if sfx_bus == null: sfx_bus = "SFX"
 	if pitch == null: pitch = 1.0

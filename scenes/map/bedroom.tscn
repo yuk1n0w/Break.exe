@@ -5,8 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bx8av3boawfgn" path="res://assets/tiles/Items_1_16x16.png" id="3_8wetk"]
 [ext_resource type="PackedScene" uid="uid://dcxprtpafrupp" path="res://scenes/player.tscn" id="4_dchtv"]
 [ext_resource type="PackedScene" uid="uid://d2shsjn1mfcl" path="res://scenes/dialogue_interaction.tscn" id="5_ulbkd"]
-[ext_resource type="PackedScene" uid="uid://dgh2ybirnu8jq" path="res://scenes/next_area.tscn" id="6_8wetk"]
-[ext_resource type="PackedScene" uid="uid://c0vd1yjayncqn" path="res://scenes/map/bedroom2.tscn" id="7_dchtv"]
+[ext_resource type="PackedScene" uid="uid://dgh2ybirnu8jq" path="res://scenes/next_area.tscn" id="6_cmie6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhwtu"]
 texture = ExtResource("1_xabet")
@@ -1083,8 +1082,6 @@ texture = ExtResource("3_8wetk")
 21:13/0 = 0
 23:13/0 = 0
 24:13/0 = 0
-26:13/0 = 0
-27:13/0 = 0
 1:14/0 = 0
 2:14/0 = 0
 3:14/0 = 0
@@ -1102,8 +1099,6 @@ texture = ExtResource("3_8wetk")
 21:14/0 = 0
 23:14/0 = 0
 24:14/0 = 0
-26:14/0 = 0
-27:14/0 = 0
 1:15/0 = 0
 2:15/0 = 0
 3:15/0 = 0
@@ -1140,6 +1135,7 @@ texture = ExtResource("3_8wetk")
 5:19/0 = 0
 6:19/0 = 0
 8:19/0 = 0
+8:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:19/0 = 0
 12:19/0 = 0
 14:19/0 = 0
@@ -1199,6 +1195,7 @@ texture = ExtResource("3_8wetk")
 18:1/0 = 0
 20:0/size_in_atlas = Vector2i(2, 3)
 20:0/0 = 0
+20:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.77, -12.0505, 12.5901, -11.511, 12.2304, 23.7414, -12.9498, 23.7414)
 23:2/size_in_atlas = Vector2i(2, 1)
 23:2/0 = 0
 25:0/size_in_atlas = Vector2i(4, 3)
@@ -1208,6 +1205,8 @@ texture = ExtResource("3_8wetk")
 20:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:6/size_in_atlas = Vector2i(1, 2)
 22:6/0 = 0
+26:13/size_in_atlas = Vector2i(2, 2)
+26:13/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_s8gur"]
 physics_layer_0/collision_layer = 1
@@ -1216,7 +1215,10 @@ sources/0 = SubResource("TileSetAtlasSource_k8rs5")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chr53"]
 size = Vector2(45, 48)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulbkd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmie6"]
+size = Vector2(30, 26)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cmie6"]
 
 [node name="Bedroom" type="Node2D"]
 
@@ -1225,7 +1227,7 @@ tile_map_data = PackedByteArray("AAD5//v/AwACABwAAAD5//z/AwAGABwAAAD5//3/AwAHABw
 tile_set = SubResource("TileSet_jjrdm")
 
 [node name="Props" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD9//7/AAAUAAYAAAA=")
+tile_map_data = PackedByteArray("AAD7//7/AAAUAAYAAAAAAPz/AAAaAA0AAAAEAPz/AAAUAAAAAAAEAAMAAAAIABMAAAA=")
 tile_set = SubResource("TileSet_s8gur")
 
 [node name="Player" parent="." instance=ExtResource("4_dchtv")]
@@ -1234,11 +1236,33 @@ unique_name_in_owner = true
 [node name="DialogueInteraction" parent="." instance=ExtResource("5_ulbkd")]
 position = Vector2(-194, 192)
 text = "It's the bed I woke up in."
-speed = 0.04
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteraction"]
-position = Vector2(152, -216)
+position = Vector2(119, -218)
 shape = SubResource("RectangleShape2D_chr53")
+
+[node name="DialogueInteraction2" parent="." instance=ExtResource("5_ulbkd")]
+position = Vector2(72, -48)
+text = "It's empty."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteraction2"]
+shape = SubResource("RectangleShape2D_chr53")
+
+[node name="DialogueInteraction3" parent="." instance=ExtResource("5_ulbkd")]
+position = Vector2(72, -18)
+text = "I wish I could be there..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteraction3"]
+position = Vector2(-63, -35)
+shape = SubResource("RectangleShape2D_cmie6")
+
+[node name="DialogueInteraction4" parent="." instance=ExtResource("5_ulbkd")]
+position = Vector2(72, -18)
+text = "Not even a dial tone..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteraction4"]
+position = Vector2(0, 76)
+shape = SubResource("RectangleShape2D_cmie6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, 8)
@@ -1247,3 +1271,12 @@ limit_left = -160
 limit_top = -160
 limit_right = 160
 limit_bottom = 160
+
+[node name="exit" parent="." instance=ExtResource("6_cmie6")]
+position = Vector2(0, 80)
+next_scene_path = "res://scenes/map/bedroom2.tscn"
+entry_pos = "exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(0, 15)
+shape = SubResource("WorldBoundaryShape2D_cmie6")

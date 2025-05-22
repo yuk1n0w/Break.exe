@@ -2,7 +2,7 @@ extends Area2D
 
 var player_inside = false
 @export var text: String = "Hello, world!"
-@export var speed: float = 0.05
+@export var speed: float = 0.04
 @export var sfx: AudioStream = preload("res://assets/square_440.wav")
 @export var sfx_vol: float = -5.0
 @export var sfx_bus: String = "SFX"
