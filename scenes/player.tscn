@@ -1,31 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcxprtpafrupp"]
+[gd_scene load_steps=8 format=3 uid="uid://dcxprtpafrupp"]
 
-[ext_resource type="Texture2D" uid="uid://iia1oum7ur43" path="res://assets/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b7g8roc2gjhc4" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://llwkv2uw81yt" path="res://assets/player/idle.png" id="2_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://btn0o32vn1bme" path="res://scenes/dialogue.tscn" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://ua2kmh325645" path="res://assets/player/1.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dwbirqislcyyq" path="res://assets/player/2.png" id="4_fjrip"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3vyb7")
+"texture": ExtResource("2_qlg0r")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjrip")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(18, 18)
+size = Vector2(21, 40)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_g2els")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.586697
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
 shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

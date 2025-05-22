@@ -6,7 +6,7 @@ var player_inside = false
 @export var sfx: AudioStream = preload("res://assets/square_440.wav")
 @export var sfx_vol: float = -5.0
 @export var sfx_bus: String = "SFX"
-@export var picture: Texture2D = preload("res://assets/icon.svg")
+@export var picture: Texture2D = preload("res://assets/player/dialogue.png")
 @export var pitch: float = 1.0
 @export var pitch_randomization: float = 0.1
 

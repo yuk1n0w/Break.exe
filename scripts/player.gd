@@ -1,5 +1,7 @@
 extends CharacterBody2D
+
 @onready var dialogue: Control = $CanvasLayer/Dialogue
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 75.0
 var speed_multiplier = 1.0
@@ -18,6 +20,17 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 		
+		# Animation and sprite flipping and stuff
+		if x_direction == 0 and y_direction == 0:
+			animated_sprite_2d.play("idle")
+		else:
+			animated_sprite_2d.play("walk")
+			
+		if x_direction > 0:
+			animated_sprite_2d.flip_h = false
+		elif x_direction < 0:
+			animated_sprite_2d.flip_h = true
+		
 func _ready():
 	Global.player_ready(self)
 
@@ -25,6 +38,7 @@ func do_dialogue(text, picture=null, sfx=null, speed=null, sfx_vol=null, sfx_bus
 	if not in_dialogue:
 		in_dialogue = true
 		dialogue.visible = true
+		animated_sprite_2d.play("idle") # Stop it from playing animation in dialogue
 		await dialogue.do_dialogue(text, picture, sfx, speed, sfx_vol, sfx_bus, pitch, pitch_randomization)
 		dialogue.visible = false
 		in_dialogue = false
@@ -33,6 +47,7 @@ func run_list(dialogue_list):
 	if not in_dialogue:
 		in_dialogue = true
 		dialogue.visible = true
+		animated_sprite_2d.play("idle") # Stop it from playing animation in dialogue
 		await dialogue.run_list(dialogue_list)
 		dialogue.visible = false
 		in_dialogue = false
