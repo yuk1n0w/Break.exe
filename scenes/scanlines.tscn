@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://o0ils3rna35x"]
+
+[ext_resource type="Shader" uid="uid://ce5he4kxdu6i8" path="res://assets/MainMenu.gdshader" id="1_xfidi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rruio"]
+shader = ExtResource("1_xfidi")
+shader_parameter/scanline_intensity = 0.05
+shader_parameter/scanline_frequency = 300.0
+shader_parameter/noise_intensity = 0.02
+shader_parameter/time_scale = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4096
+material = SubResource("ShaderMaterial_rruio")
+offset_right = 9999.0
+offset_bottom = 9999.0
+color = Color(1, 1, 1, 0)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://csivbqedkgnta"]
+
+[ext_resource type="Script" uid="uid://hy55mhrcxf8r" path="res://scripts/debug.gd" id="1_4pmxj"]
+[ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="1_lgrwq"]
+
+[node name="Debug" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4pmxj")
+
+[node name="FPSCounter" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_lgrwq")
+theme_override_font_sizes/font_size = 32
+text = "FPS: 60"
+
+[node name="PhysicsFPSCounter" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 78.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("1_lgrwq")
+theme_override_font_sizes/font_size = 32
+text = "FPS: 60"

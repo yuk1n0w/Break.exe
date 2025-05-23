@@ -1,16 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh7dqxa4ttvy3"]
+[gd_scene load_steps=4 format=3 uid="uid://bh7dqxa4ttvy3"]
 
 [ext_resource type="Script" uid="uid://c18li2dhpfog2" path="res://scripts/MainMenu.gd" id="1_bqqt6"]
-[ext_resource type="Shader" uid="uid://ce5he4kxdu6i8" path="res://assets/MainMenu.gdshader" id="2_wu84c"]
 [ext_resource type="FontFile" uid="uid://b51igss45y0cu" path="res://fonts/Jersey10-Regular.ttf" id="3_8ln24"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ow34m"]
-shader = ExtResource("2_wu84c")
-shader_parameter/base_color = Color(0.125, 0.188, 0.125, 1)
-shader_parameter/scanline_intensity = 0.05
-shader_parameter/scanline_frequency = 480.0
-shader_parameter/noise_intensity = 0.02
-shader_parameter/time_scale = 1.0
 
 [sub_resource type="Environment" id="Environment_2wh52"]
 glow_enabled = true
@@ -26,16 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqqt6")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ow34m")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.12549, 0.188235, 0.12549, 1)
 
 [node name="TitleVBox" type="VBoxContainer" parent="."]
 layout_mode = 1

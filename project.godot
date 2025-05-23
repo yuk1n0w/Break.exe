@@ -19,6 +19,8 @@ config/icon="res://assets/icon.svg"
 
 Settings="*res://scripts/settings.gd"
 Global="*res://scenes/global.tscn"
+Debug="*res://scenes/debug.tscn"
+Scanlines="*res://scenes/scanlines.tscn"
 
 [display]
 
