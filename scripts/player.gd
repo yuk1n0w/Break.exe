@@ -8,6 +8,7 @@ var speed_multiplier = 1.0
 @export var in_dialogue = false
 
 func _physics_process(delta: float) -> void:
+	# TODO: Idk if this is right check if delta is right it might be faster and slower on some screens
 	if not in_dialogue:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
